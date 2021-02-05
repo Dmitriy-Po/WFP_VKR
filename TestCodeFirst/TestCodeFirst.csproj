@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F99EA090-2A76-4C1A-A9C4-13EA46221A23}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestCodeFirst</RootNamespace>
+    <AssemblyName>TestCodeFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySqlConnector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.1.2.0\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.0\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CalculationPlan.cs" />
+    <Compile Include="Commands\CreateDataListCommand.cs" />
+    <Compile Include="Commands\DataResult.cs" />
+    <Compile Include="Commands\SaveCommand.cs" />
+    <Compile Include="Commands\UpdateCommand.cs" />
+    <Compile Include="DataContext\CodeFirstContext.cs" />
+    <Compile Include="DataContext\ДневнаяНормаНаУстановку.cs" />
+    <Compile Include="DataContext\ПланПроизводстваПоДням.cs" />
+    <Compile Include="DataContext\ПланПроизводстваПоМесяцам.cs" />
+    <Compile Include="DataContext\РежимРаботыУстановки.cs" />
+    <Compile Include="DataContext\СправочникРесурсов.cs" />
+    <Compile Include="DataContext\ТехнологическаяУстановка.cs" />
+    <Compile Include="DataContext\ПланНормативныйТехнологический.cs" />
+    <Compile Include="DataContext\РежимРаботыАгрегата.cs" />
+    <Compile Include="DataContext\СиловойАгрегатВУстановке.cs" />
+    <Compile Include="DataContext\Справочник.cs" />
+    <Compile Include="DataContext\НаборПеречислителей.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="DataContext\Установка.cs" />
+    <Compile Include="DataContext\УстановкаРежимРесурс.cs" />
+    <Compile Include="DataContext\ФактическоеПотребление.cs" />
+    <Compile Include="Migrations\202012041046199_InitialCreate.cs" />
+    <Compile Include="Migrations\202012041046199_InitialCreate.Designer.cs">
+      <DependentUpon>202012041046199_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012041430292_deleteing_id_columns.cs" />
+    <Compile Include="Migrations\202012041430292_deleteing_id_columns.Designer.cs">
+      <DependentUpon>202012041430292_deleteing_id_columns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012041735552_deleting_all_id.cs" />
+    <Compile Include="Migrations\202012041735552_deleting_all_id.Designer.cs">
+      <DependentUpon>202012041735552_deleting_all_id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012050851145_swap_id.cs" />
+    <Compile Include="Migrations\202012050851145_swap_id.Designer.cs">
+      <DependentUpon>202012050851145_swap_id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061356045_UpdateDB.cs" />
+    <Compile Include="Migrations\202101061356045_UpdateDB.Designer.cs">
+      <DependentUpon>202101061356045_UpdateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101651190_Modif_Field_1k1.cs" />
+    <Compile Include="Migrations\202101101651190_Modif_Field_1k1.Designer.cs">
+      <DependentUpon>202101101651190_Modif_Field_1k1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101700087_delet_virtual.cs" />
+    <Compile Include="Migrations\202101101700087_delet_virtual.Designer.cs">
+      <DependentUpon>202101101700087_delet_virtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101704583_Add_partian_inВыбранноеСостояние.cs" />
+    <Compile Include="Migrations\202101101704583_Add_partian_inВыбранноеСостояние.Designer.cs">
+      <DependentUpon>202101101704583_Add_partian_inВыбранноеСостояние.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101716173_add_withReq_dependent.cs" />
+    <Compile Include="Migrations\202101101716173_add_withReq_dependent.Designer.cs">
+      <DependentUpon>202101101716173_add_withReq_dependent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110810119_Swith FKs.cs" />
+    <Compile Include="Migrations\202101110810119_Swith FKs.Designer.cs">
+      <DependentUpon>202101110810119_Swith FKs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110828483_13_28.cs" />
+    <Compile Include="Migrations\202101110828483_13_28.Designer.cs">
+      <DependentUpon>202101110828483_13_28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110845203_13_44.cs" />
+    <Compile Include="Migrations\202101110845203_13_44.Designer.cs">
+      <DependentUpon>202101110845203_13_44.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110905418_14_05.cs" />
+    <Compile Include="Migrations\202101110905418_14_05.Designer.cs">
+      <DependentUpon>202101110905418_14_05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110951128_14_51.cs" />
+    <Compile Include="Migrations\202101110951128_14_51.Designer.cs">
+      <DependentUpon>202101110951128_14_51.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111011432_15_11.cs" />
+    <Compile Include="Migrations\202101111011432_15_11.Designer.cs">
+      <DependentUpon>202101111011432_15_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111101046_15_56.cs" />
+    <Compile Include="Migrations\202101111101046_15_56.Designer.cs">
+      <DependentUpon>202101111101046_15_56.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111102315_16_02.cs" />
+    <Compile Include="Migrations\202101111102315_16_02.Designer.cs">
+      <DependentUpon>202101111102315_16_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111303337_18_03.cs" />
+    <Compile Include="Migrations\202101111303337_18_03.Designer.cs">
+      <DependentUpon>202101111303337_18_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111338415_18_38.cs" />
+    <Compile Include="Migrations\202101111338415_18_38.Designer.cs">
+      <DependentUpon>202101111338415_18_38.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111346445_18_46.cs" />
+    <Compile Include="Migrations\202101111346445_18_46.Designer.cs">
+      <DependentUpon>202101111346445_18_46.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111402158_19_01 выбранное состояние без связи с планом.cs" />
+    <Compile Include="Migrations\202101111402158_19_01 выбранное состояние без связи с планом.Designer.cs">
+      <DependentUpon>202101111402158_19_01 выбранное состояние без связи с планом.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101121646103_NewEntity.cs" />
+    <Compile Include="Migrations\202101121646103_NewEntity.Designer.cs">
+      <DependentUpon>202101121646103_NewEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101121648525_AddFieldУстройство.cs" />
+    <Compile Include="Migrations\202101121648525_AddFieldУстройство.Designer.cs">
+      <DependentUpon>202101121648525_AddFieldУстройство.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101160753271_ЗаменаТиповКлючей_ПеречисленияНаИнт.cs" />
+    <Compile Include="Migrations\202101160753271_ЗаменаТиповКлючей_ПеречисленияНаИнт.Designer.cs">
+      <DependentUpon>202101160753271_ЗаменаТиповКлючей_ПеречисленияНаИнт.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181222210_ДобавлениеНовыхСущностей.cs" />
+    <Compile Include="Migrations\202101181222210_ДобавлениеНовыхСущностей.Designer.cs">
+      <DependentUpon>202101181222210_ДобавлениеНовыхСущностей.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181225494_ДобавлениеАТрибутаpartial.cs" />
+    <Compile Include="Migrations\202101181225494_ДобавлениеАТрибутаpartial.Designer.cs">
+      <DependentUpon>202101181225494_ДобавлениеАТрибутаpartial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181229191_ДобавлениеКонструкторов.cs" />
+    <Compile Include="Migrations\202101181229191_ДобавлениеКонструкторов.Designer.cs">
+      <DependentUpon>202101181229191_ДобавлениеКонструкторов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181232236_ДобавлениеКонструкторов2.cs" />
+    <Compile Include="Migrations\202101181232236_ДобавлениеКонструкторов2.Designer.cs">
+      <DependentUpon>202101181232236_ДобавлениеКонструкторов2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181236461_ДобавлениеКонструкторов3.cs" />
+    <Compile Include="Migrations\202101181236461_ДобавлениеКонструкторов3.Designer.cs">
+      <DependentUpon>202101181236461_ДобавлениеКонструкторов3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181244436_ДобавлениеКонструкторов4.cs" />
+    <Compile Include="Migrations\202101181244436_ДобавлениеКонструкторов4.Designer.cs">
+      <DependentUpon>202101181244436_ДобавлениеКонструкторов4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181249363_ДобавлениеВКонтекстСущностей.cs" />
+    <Compile Include="Migrations\202101181249363_ДобавлениеВКонтекстСущностей.Designer.cs">
+      <DependentUpon>202101181249363_ДобавлениеВКонтекстСущностей.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101181629349_AddManyToMany.cs" />
+    <Compile Include="Migrations\202101181629349_AddManyToMany.Designer.cs">
+      <DependentUpon>202101181629349_AddManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101190830288_AddManyToManyThirdTables.cs" />
+    <Compile Include="Migrations\202101190830288_AddManyToManyThirdTables.Designer.cs">
+      <DependentUpon>202101190830288_AddManyToManyThirdTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101190926036_SimpleUpdate19_01.cs" />
+    <Compile Include="Migrations\202101190926036_SimpleUpdate19_01.Designer.cs">
+      <DependentUpon>202101190926036_SimpleUpdate19_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101201052526_simpleUpdate15_52.cs" />
+    <Compile Include="Migrations\202101201052526_simpleUpdate15_52.Designer.cs">
+      <DependentUpon>202101201052526_simpleUpdate15_52.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101201139198_DeleteEmunfromСиловойАгрегат.cs" />
+    <Compile Include="Migrations\202101201139198_DeleteEmunfromСиловойАгрегат.Designer.cs">
+      <DependentUpon>202101201139198_DeleteEmunfromСиловойАгрегат.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101210903241_14_03.cs" />
+    <Compile Include="Migrations\202101210903241_14_03.Designer.cs">
+      <DependentUpon>202101210903241_14_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101210938187_RenameРежимАгрегата.cs" />
+    <Compile Include="Migrations\202101210938187_RenameРежимАгрегата.Designer.cs">
+      <DependentUpon>202101210938187_RenameРежимАгрегата.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101210943391_DeleteRelDevInMode.cs" />
+    <Compile Include="Migrations\202101210943391_DeleteRelDevInMode.Designer.cs">
+      <DependentUpon>202101210943391_DeleteRelDevInMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211021445_RenameModePower.cs" />
+    <Compile Include="Migrations\202101211021445_RenameModePower.Designer.cs">
+      <DependentUpon>202101211021445_RenameModePower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211035132_RenameTables.cs" />
+    <Compile Include="Migrations\202101211035132_RenameTables.Designer.cs">
+      <DependentUpon>202101211035132_RenameTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211045157_AddModePowerTODevice.cs" />
+    <Compile Include="Migrations\202101211045157_AddModePowerTODevice.Designer.cs">
+      <DependentUpon>202101211045157_AddModePowerTODevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211049099_DeleteПроизводительностьFromModePowerАгрегат.cs" />
+    <Compile Include="Migrations\202101211049099_DeleteПроизводительностьFromModePowerАгрегат.Designer.cs">
+      <DependentUpon>202101211049099_DeleteПроизводительностьFromModePowerАгрегат.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211053339_RenameTableManyToMany.cs" />
+    <Compile Include="Migrations\202101211053339_RenameTableManyToMany.Designer.cs">
+      <DependentUpon>202101211053339_RenameTableManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211132366_Modif.cs" />
+    <Compile Include="Migrations\202101211132366_Modif.Designer.cs">
+      <DependentUpon>202101211132366_Modif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211145451_ModifManyToMany.cs" />
+    <Compile Include="Migrations\202101211145451_ModifManyToMany.Designer.cs">
+      <DependentUpon>202101211145451_ModifManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211151294_simpleUpdate.cs" />
+    <Compile Include="Migrations\202101211151294_simpleUpdate.Designer.cs">
+      <DependentUpon>202101211151294_simpleUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211154075_simpleUpdate16_53.cs" />
+    <Compile Include="Migrations\202101211154075_simpleUpdate16_53.Designer.cs">
+      <DependentUpon>202101211154075_simpleUpdate16_53.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101211406129_DeleteManyToMany.cs" />
+    <Compile Include="Migrations\202101211406129_DeleteManyToMany.Designer.cs">
+      <DependentUpon>202101211406129_DeleteManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102020919113_ДобавлениеПолянНаименованиеРесурсаВТаблицуРежимРаботыУстановки.cs" />
+    <Compile Include="Migrations\202102020919113_ДобавлениеПолянНаименованиеРесурсаВТаблицуРежимРаботыУстановки.Designer.cs">
+      <DependentUpon>202102020919113_ДобавлениеПолянНаименованиеРесурсаВТаблицуРежимРаботыУстановки.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102021120079_addDeleteCascade.cs" />
+    <Compile Include="Migrations\202102021120079_addDeleteCascade.Designer.cs">
+      <DependentUpon>202102021120079_addDeleteCascade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102021130427_addDeleteCascadeДневнаяНорма.cs" />
+    <Compile Include="Migrations\202102021130427_addDeleteCascadeДневнаяНорма.Designer.cs">
+      <DependentUpon>202102021130427_addDeleteCascadeДневнаяНорма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102040544265_Доб.ПеречислениеВТабл.СиловойАгрегатИРежимРаюАгрегата.cs" />
+    <Compile Include="Migrations\202102040544265_Доб.ПеречислениеВТабл.СиловойАгрегатИРежимРаюАгрегата.Designer.cs">
+      <DependentUpon>202102040544265_Доб.ПеречислениеВТабл.СиловойАгрегатИРежимРаюАгрегата.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BaseClassOnChanged.cs" />
+    <Compile Include="ViewModels\ДневнаяНормаVM.cs" />
+    <Compile Include="ViewModels\НормыПоУстановкамиVM.cs" />
+    <Compile Include="ViewModels\ПланНормативныйVM.cs" />
+    <Compile Include="ViewModels\ПланПоМесяцамVM.cs" />
+    <Compile Include="ViewModels\РежимРаботыVM.cs" />
+    <Compile Include="ViewModels\РежимРаботыУстановкиVM.cs" />
+    <Compile Include="ViewModels\СиловойАгрегатVM.cs" />
+    <Compile Include="ViewModels\СправочникРесурсовVM.cs" />
+    <Compile Include="ViewModels\УстройствоVM.cs" />
+    <Compile Include="ViewModels\ФактическоеПотреблениеVM.cs" />
+    <Compile Include="WorkWithCollection\WorkCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012041046199_InitialCreate.resx">
+      <DependentUpon>202012041046199_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041430292_deleteing_id_columns.resx">
+      <DependentUpon>202012041430292_deleteing_id_columns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041735552_deleting_all_id.resx">
+      <DependentUpon>202012041735552_deleting_all_id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012050851145_swap_id.resx">
+      <DependentUpon>202012050851145_swap_id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061356045_UpdateDB.resx">
+      <DependentUpon>202101061356045_UpdateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101651190_Modif_Field_1k1.resx">
+      <DependentUpon>202101101651190_Modif_Field_1k1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101700087_delet_virtual.resx">
+      <DependentUpon>202101101700087_delet_virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101704583_Add_partian_inВыбранноеСостояние.resx">
+      <DependentUpon>202101101704583_Add_partian_inВыбранноеСостояние.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101716173_add_withReq_dependent.resx">
+      <DependentUpon>202101101716173_add_withReq_dependent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110810119_Swith FKs.resx">
+      <DependentUpon>202101110810119_Swith FKs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110828483_13_28.resx">
+      <DependentUpon>202101110828483_13_28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110845203_13_44.resx">
+      <DependentUpon>202101110845203_13_44.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110905418_14_05.resx">
+      <DependentUpon>202101110905418_14_05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110951128_14_51.resx">
+      <DependentUpon>202101110951128_14_51.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111011432_15_11.resx">
+      <DependentUpon>202101111011432_15_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111101046_15_56.resx">
+      <DependentUpon>202101111101046_15_56.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111102315_16_02.resx">
+      <DependentUpon>202101111102315_16_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111303337_18_03.resx">
+      <DependentUpon>202101111303337_18_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111338415_18_38.resx">
+      <DependentUpon>202101111338415_18_38.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111346445_18_46.resx">
+      <DependentUpon>202101111346445_18_46.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111402158_19_01 выбранное состояние без связи с планом.resx">
+      <DependentUpon>202101111402158_19_01 выбранное состояние без связи с планом.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101121646103_NewEntity.resx">
+      <DependentUpon>202101121646103_NewEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101121648525_AddFieldУстройство.resx">
+      <DependentUpon>202101121648525_AddFieldУстройство.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101160753271_ЗаменаТиповКлючей_ПеречисленияНаИнт.resx">
+      <DependentUpon>202101160753271_ЗаменаТиповКлючей_ПеречисленияНаИнт.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181222210_ДобавлениеНовыхСущностей.resx">
+      <DependentUpon>202101181222210_ДобавлениеНовыхСущностей.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181225494_ДобавлениеАТрибутаpartial.resx">
+      <DependentUpon>202101181225494_ДобавлениеАТрибутаpartial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181229191_ДобавлениеКонструкторов.resx">
+      <DependentUpon>202101181229191_ДобавлениеКонструкторов.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181232236_ДобавлениеКонструкторов2.resx">
+      <DependentUpon>202101181232236_ДобавлениеКонструкторов2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181236461_ДобавлениеКонструкторов3.resx">
+      <DependentUpon>202101181236461_ДобавлениеКонструкторов3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181244436_ДобавлениеКонструкторов4.resx">
+      <DependentUpon>202101181244436_ДобавлениеКонструкторов4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181249363_ДобавлениеВКонтекстСущностей.resx">
+      <DependentUpon>202101181249363_ДобавлениеВКонтекстСущностей.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101181629349_AddManyToMany.resx">
+      <DependentUpon>202101181629349_AddManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101190830288_AddManyToManyThirdTables.resx">
+      <DependentUpon>202101190830288_AddManyToManyThirdTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101190926036_SimpleUpdate19_01.resx">
+      <DependentUpon>202101190926036_SimpleUpdate19_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101201052526_simpleUpdate15_52.resx">
+      <DependentUpon>202101201052526_simpleUpdate15_52.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101201139198_DeleteEmunfromСиловойАгрегат.resx">
+      <DependentUpon>202101201139198_DeleteEmunfromСиловойАгрегат.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101210903241_14_03.resx">
+      <DependentUpon>202101210903241_14_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101210938187_RenameРежимАгрегата.resx">
+      <DependentUpon>202101210938187_RenameРежимАгрегата.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101210943391_DeleteRelDevInMode.resx">
+      <DependentUpon>202101210943391_DeleteRelDevInMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211021445_RenameModePower.resx">
+      <DependentUpon>202101211021445_RenameModePower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211035132_RenameTables.resx">
+      <DependentUpon>202101211035132_RenameTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211045157_AddModePowerTODevice.resx">
+      <DependentUpon>202101211045157_AddModePowerTODevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211049099_DeleteПроизводительностьFromModePowerАгрегат.resx">
+      <DependentUpon>202101211049099_DeleteПроизводительностьFromModePowerАгрегат.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211053339_RenameTableManyToMany.resx">
+      <DependentUpon>202101211053339_RenameTableManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211132366_Modif.resx">
+      <DependentUpon>202101211132366_Modif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211145451_ModifManyToMany.resx">
+      <DependentUpon>202101211145451_ModifManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211151294_simpleUpdate.resx">
+      <DependentUpon>202101211151294_simpleUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211154075_simpleUpdate16_53.resx">
+      <DependentUpon>202101211154075_simpleUpdate16_53.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101211406129_DeleteManyToMany.resx">
+      <DependentUpon>202101211406129_DeleteManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102020919113_ДобавлениеПолянНаименованиеРесурсаВТаблицуРежимРаботыУстановки.resx">
+      <DependentUpon>202102020919113_ДобавлениеПолянНаименованиеРесурсаВТаблицуРежимРаботыУстановки.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102021120079_addDeleteCascade.resx">
+      <DependentUpon>202102021120079_addDeleteCascade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102021130427_addDeleteCascadeДневнаяНорма.resx">
+      <DependentUpon>202102021130427_addDeleteCascadeДневнаяНорма.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102040544265_Доб.ПеречислениеВТабл.СиловойАгрегатИРежимРаюАгрегата.resx">
+      <DependentUpon>202102040544265_Доб.ПеречислениеВТабл.СиловойАгрегатИРежимРаюАгрегата.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

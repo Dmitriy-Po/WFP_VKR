@@ -1,0 +1,107 @@
+﻿<Window x:Class="WPF_SENM.Устройство.DeviceListForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_SENM.Устройство"
+        xmlns:dx1="clr-namespace:TestCodeFirst.ViewModels;assembly=TestCodeFirst"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Справочник установок"
+        Name="MainWindow"
+        MinHeight="300" 
+        MinWidth="600"
+        Height="400" 
+        Width="800"
+        FontSize="14"
+        ResizeMode="CanResizeWithGrip">
+
+    <Window.DataContext>
+        <dx1:УстройствоVM/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel
+            Grid.Column="0"
+            Grid.Row="0"
+            Orientation="Horizontal">
+            <Button
+                Margin="10"
+                Width="130"
+                Click="Button_Click">
+                <TextBlock
+                    Padding="3"
+                    Text="Силовые агрегаты..."
+                    TextWrapping="WrapWithOverflow"
+                    TextAlignment="Center"/>
+            </Button>
+            <Button
+                Margin="10"
+                Width="100"
+                Click="Button_Click_1">
+                <TextBlock
+                    Padding="3"
+                    Text="Режимы работ..."
+                    TextWrapping="WrapWithOverflow"
+                    TextAlignment="Center"/>
+            </Button>
+        </StackPanel>
+        <DataGrid
+            Grid.Column="0"
+            Grid.Row="1"
+            Name="DGDevices"
+            Margin="0 10 0 0"
+            ItemsSource="{Binding Path=Devices}"
+            SelectedItem="{Binding Path=SelectedDevice}"
+            AutoGenerateColumns="False"
+            VerticalScrollBarVisibility="Auto"
+            CanUserResizeRows="False"
+            RowHeight="25">
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Binding="{Binding Path=Марка}" 
+                    Header="Марка" 
+                    Width="*"/>
+                <DataGridTextColumn 
+                    Binding="{Binding Path=Модель}" 
+                    Header="Модель" 
+                    Width="*"/>
+                <DataGridTextColumn 
+                    Binding="{Binding Path=Описание}" 
+                    Header="Описание" 
+                    Width="*"/>
+
+                <DataGridTemplateColumn Header="Дата выпуска" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock 
+                                    Text="{
+                                        Binding Path=ДатаВыпуска, 
+                                        StringFormat=dd.MM.yyyy}" 
+                                    TextAlignment="Left"
+                                    Margin="3"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker
+                                    Name="MyDate"
+                                    SelectedDate="{
+                                        Binding Path=ДатаВыпуска,
+                                        UpdateSourceTrigger=PropertyChanged, 
+                                        Mode=TwoWay}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

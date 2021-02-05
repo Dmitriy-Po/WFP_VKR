@@ -1,0 +1,68 @@
+﻿<Window x:Class="WPF_SENM.Планы.НормыПоУстановкамEditForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_SENM.Планы"
+        mc:Ignorable="d"
+        Title="Список потребляемых ресурсов"
+        MinWidth="340"
+        MinHeight="340"
+        Height="217" 
+        Width="500"
+        FontSize="14"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip">    
+    
+    <Grid>
+        <StackPanel
+            Orientation="Vertical">
+            <Label 
+                Margin="0 10 0 0"
+                Content="Текущий режим работы установки:"/>
+            <ComboBox
+                Height="30"
+                FontSize="14"
+                Margin="10 5 10 20"
+                ItemsSource="{Binding Path=ModePowersDevices}"
+                SelectedItem="{Binding Path=SelectedMode}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0}">
+                                    <Binding Path="РежимРаботы"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Потребляемые энергоресурсы:"/>
+            <DataGrid
+                Width="auto"
+                ItemsSource="{Binding Path=OperationMods}"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                IsReadOnly="True"
+                AutoGenerateColumns="False"
+                RowHeight="25"
+                CanUserResizeRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                    Binding="{Binding Path=НаименованиеРесурса}"
+                    Header="Ресурс" 
+                    Width="*"/>
+                    <DataGridTextColumn 
+                    Binding="{Binding Path=РасчитанноеПотребление}" 
+                    Header="Потребление" 
+                    Width="*"/>
+                    <DataGridTextColumn 
+                    Binding="{Binding Path=ТипЕдиниц}" 
+                    Header="Единицы измерения" 
+                    Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
